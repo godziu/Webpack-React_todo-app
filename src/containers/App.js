@@ -1,30 +1,34 @@
 import React from 'react';
 import uuid from 'uuid';
 import style from './App.css';
+import Title from '../components/Title';
 
 class App extends React.Component {
-    constructor(props) {
+    constructor(props){
         super(props);
         this.state = {
             data: []
         };
     }
-    addTodo(val) {
+    
+    addTodo(val){
         const todo = {
             text: val,
-            id: uuid.v4(),
+            id: uuid.v4()
         };
-        const data = [ ...this.state.data, todo];
+        const data = [...this.state.data, todo];
         this.setState({data});
     }
-    removeTodo( d) {
-        const remainder = this.state.data.filter(todo => todo.id !== id);
-        this.setState({data: remainder}); 
+    
+    removeTodo(id) {
+        const remainder = this.state.data.filter(todo => todo.id !== todo.id);
+        this.setState({data: remainder})
     }
-    render() {
+    
+    render () {
         return (
             <div className={style.TodoApp}>
-                Tutaj pojawiają się komponenty naszej aplikacji 
+                <Title title='TodoApp' length={this.state.data.length} />
             </div>
         );
     }

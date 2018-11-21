@@ -1,7 +1,9 @@
-import Todo from './Todo';
-import TodoFrom from './TodoForm';
-import TodoList from './TodoList';
+import React from 'react';
 
-class Title extends React.Component {
-    
-}
+const Title = props =>
+    <div>
+      <h1>{props.title}</h1>
+      <p>Lista: {props.length}</p>
+    </div>
+
+export default Title;
